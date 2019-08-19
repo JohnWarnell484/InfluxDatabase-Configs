@@ -1,1 +1,23 @@
-#First Save
+[meta]
+  dir = "/var/lib/influxdb/meta"
+  
+[data]
+  dir = "var/lib/influxdb/data"
+  engine = "tsm1"
+  wal-dir = "/var/lib/influxdb/wal"
+ 
+[[graphite]]
+  #Determined whether the graphice server endpoint is enabled
+  enabled = "true"
+  database = "graphitedb"
+  #retention-policy = ""
+  bind-address = "172.17.0.4:2003"
+  #protocol = "tcp"
+  #consistency-level = "one"
+  
+  templates = [
+  "*.app env.services.resource.measurement",
+  "server.* .host.resource.mesasurement*",
+  # Default template
+  #"server.*",
+  ]
