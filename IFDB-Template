@@ -11,7 +11,7 @@
   enabled = "true"
   database = "graphitedb"
   #retention-policy = ""
-  bind-address = "172.17.0.4:2003"
+  bind-address = "192.168.1.12:2003"
   #protocol = "tcp"
   #consistency-level = "one"
   
